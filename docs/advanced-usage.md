@@ -7,6 +7,7 @@
   - [Microsoft](#Microsoft)
   - [Amazon Corretto](#Amazon-Corretto)
   - [Oracle](#Oracle)
+  - [Alibaba Dragonwell](#Alibaba-Dragonwell)
 - [Installing custom Java package type](#Installing-custom-Java-package-type)
 - [Installing custom Java architecture](#Installing-custom-Java-architecture)
 - [Installing custom Java distribution from local file](#Installing-Java-from-local-file)
@@ -207,6 +208,18 @@ jobs:
           distribution: 'temurin'
           java-version: ${{ matrix.java }}
       - run: java -cp java HelloWorldApp
+```
+
+### Alibaba Dragonwell
+**NOTE:** Alibaba Dragonwell only provides jdk.
+```yaml
+steps:
+- uses: actions/checkout@v3
+- uses: actions/setup-java@v3
+  with:
+    distribution: 'dragonwell'
+    java-version: '8'
+- run: java -cp java HelloWorldApp
 ```
 
 ## Publishing using Apache Maven
