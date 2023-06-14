@@ -215,7 +215,7 @@ jobs:
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: actions/setup-java@v3
+- uses: dragonwell-releng/setup-java@v3
   with:
     distribution: 'dragonwell'
     java-version: '8'
